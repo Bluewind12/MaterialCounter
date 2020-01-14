@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class MaterialEntity constructor(
+data class MaterialEntity (
     @PrimaryKey(autoGenerate = true) val id: Long,
     val name: String,
     val target_material: Long,
