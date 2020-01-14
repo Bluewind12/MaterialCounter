@@ -1,75 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout>
 
-    <GridLayout
+    <data>
+
+        <variable
+            name="viewModel"
+            type="momonyan.materialcounter.viewmodel.MainViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            tools:text="名前" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView2"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            tools:text="目標" />
+            <TextView
+                android:id="@+id/mainGridTitleTextView"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                tools:text="名前" />
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView3"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnWeight="1"
-            tools:text="1週" />
+            <TextView
+                android:id="@+id/mainGridTitleTextView2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                tools:text="目標" />
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView4"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:layout_columnWeight="1"
-            tools:text="現在" />
+            <TextView
+                android:id="@+id/mainGridTitleTextView3"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                tools:text="1週" />
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView5"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="4"
-            android:layout_columnWeight="1"
-            tools:text="目標まで" />
+            <TextView
+                android:id="@+id/mainGridTitleTextView4"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                tools:text="現在" />
 
-        <TextView
-            android:id="@+id/mainGridTitleTextView6"
-            android:layout_width="0dip"
+            <TextView
+                android:id="@+id/mainGridTitleTextView5"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:layout_columnWeight="1"
+                tools:text="目標まで" />
+
+            <TextView
+                android:id="@+id/mainGridTitleTextView6"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:layout_columnWeight="1"
+                tools:text="カウント" />
+        </GridLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="5"
-            android:layout_columnWeight="1"
-            tools:text="カウント" />
-    </GridLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{()->viewModel.addData()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
